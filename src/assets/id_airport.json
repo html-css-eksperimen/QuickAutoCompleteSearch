@@ -1,0 +1,32 @@
+{
+  "datajson": [
+    {
+      "iata": "SOC",
+      "nama": "Adi Sumarmo",
+      "kategori": "Internasional Airport, Embarkasi Haji",
+      "pengelola": "PT. Angkasa Pura I",
+      "alamat": "Jl. Bandara Adisumarmo - Surakarta, PO.BOX 800, Solo, 57108, Kec. Ngemplak, Kab. Boyolali, Jawa Tengah."
+    },
+    {
+      "iata": "JOG",
+      "nama": "Adi Sutjipto",
+      "kategori": "Internasional Airport",
+      "pengelola": "PT. Angkasa Pura I",
+      "alamat": "Jl. Raya Solo, KM. 9, Kel. Maguwoharjo, Kec. Depok, Kab. Sleman, DI Yogyakarta, 55282"
+    },
+    {
+      "iata": "",
+      "nama": "",
+      "kategori": "",
+      "pengelola": "",
+      "alamat": ""
+    },
+        {
+      "iata": "",
+      "nama": "",
+      "kategori": "",
+      "pengelola": "",
+      "alamat": ""
+    }
+  ]
+}

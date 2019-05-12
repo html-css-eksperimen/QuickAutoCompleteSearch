@@ -23,7 +23,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              {
+                "input": "src/styles.css",
+                "bundleName": "main-style",
+                "lazy": true
+              },
+              {
+                "input": "styled-themes/bootstrap.min.css",
+                "bundleName": "bootswatch-materia-style",
+                "lazy": true
+              },
+              {
+                "input": "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                "bundleName": "font-awe-style",
+                "lazy": true
+              }
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -45,6 +59,7 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "progress": true,
               "budgets": [
                 {
                   "type": "initial",
