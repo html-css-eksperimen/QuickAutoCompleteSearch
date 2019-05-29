@@ -23,14 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              {
-                "input": "src/styles.css",
-                "bundleName": "main-style",
-                "lazy": true
-              },
+              "src/styles.css",
               {
                 "input": "styled-themes/bootstrap.min.css",
-                "bundleName": "bootswatch-materia-style",
+                "bundleName": "bootstrap-style",
                 "lazy": true
               },
               {
