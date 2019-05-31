@@ -6,7 +6,7 @@
           <i class="fas fa-plane-departure"></i> Airport Lookup
         </h3>
         <div class="form-group">
-          <input [(ngModel)]="stringPencarian" type="text" id="search" class="form-control form-control-lg" placeholder="Masukkan nama bandara...">
+          <input (keyup)="searchBandaraPesawat($event.target.value)" [(ngModel)]="stringPencarian" type="text" id="search" class="form-control form-control-lg" placeholder="Masukkan nama bandara...">
         </div>
         <div id="match-list">
 
