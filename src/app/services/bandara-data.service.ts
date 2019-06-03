@@ -3,6 +3,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs/internal/observable/throwError';
 import { map, catchError } from 'rxjs/operators';
 import { BandaraResult } from '../models/BandaraResult';
+import { BandaraItem } from '../models/BandaraItem';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,23 +15,49 @@ export class BandaraDataService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * @description Ambil data bandara pertama kali
+   */
   getDataBandara() {
 
     const requestObservable = this.http.get(this.urlRequest).pipe(
       map((data: any) => {
         const arraydata = data.datajson;
-        const panjangData = arraydata.length;
-
-        console.log(panjangData);
-        console.log(arraydata);
+        const listBandaraItem: BandaraItem[] = arraydata;
+        const bandaraResult: BandaraResult = new BandaraResult([]);
+        bandaraResult.datajson = listBandaraItem;
+        return bandaraResult;
       }),
       catchError(this.handleErrors)
     );
     return requestObservable;
   }
 
-  filterDataBandara() {
 
+  /**
+   * @description Filter data bandara dengan kata kunci
+   * @param listbandara array bandara
+   * @param stringKataKunci kata kunci filter
+   */
+  filterDataBandara(listbandara: any, stringKataKunci: string) {
+
+    const observableFilter = Observable.create((observer) => {
+
+      const listBandaraFilter = listbandara.filter((bandara: BandaraItem) => {
+
+        const regex = new RegExp(`^${stringKataKunci}`, 'gi');
+        // return bandara.nama.toLowerCase().includes(stringKataKunci.toLowerCase());
+        return bandara.nama.match(regex) || bandara.alamat.match(regex) ||
+        bandara.kategori.match(regex) || bandara.iata.match(regex) || bandara.pengelola.match(regex);
+      });
+
+      return listBandaraFilter;
+    })
+    .pipe(
+      catchError(this.handleErrors)
+    );
+
+    return observableFilter;
   }
 
   handleErrors(error: HttpErrorResponse) {
