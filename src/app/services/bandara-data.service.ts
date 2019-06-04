@@ -51,7 +51,8 @@ export class BandaraDataService {
         bandara.kategori.match(regex) || bandara.iata.match(regex) || bandara.pengelola.match(regex);
       });
 
-      return listBandaraFilter;
+      observer.next(listBandaraFilter);
+      observer.complete();
     })
     .pipe(
       catchError(this.handleErrors)

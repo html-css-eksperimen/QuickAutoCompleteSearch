@@ -9,7 +9,10 @@
           <input (keyup)="searchBandaraPesawat($event.target.value)" [(ngModel)]="stringPencarian" type="text" id="search" class="form-control form-control-lg" placeholder="Masukkan nama bandara...">
         </div>
         <div id="match-list">
-
+          <div class="card card-body mb-1" *ngFor="let bandara of listBandaraFilter; trackBy: trackByFunctions; let indx = index">
+            <h4>{{bandara.nama}} ({{bandara.iata}})<span class="text-primary">{{bandara.kategori}}</span></h4>
+            <small>{{bandara.alamat}}</small>
+          </div>
         </div>
       </div>
     </div>
