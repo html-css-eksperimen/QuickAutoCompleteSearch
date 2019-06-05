@@ -61,6 +61,10 @@ export class BandaraDataService {
     return observableFilter;
   }
 
+  /**
+   * @description Error yang muncul akan di tampilkan
+   * @param error eksepsi error
+   */
   handleErrors(error: HttpErrorResponse) {
 
     if (error.error instanceof ErrorEvent) {
