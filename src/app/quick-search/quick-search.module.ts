@@ -6,7 +6,6 @@ import { QuickSearchRoutingModule } from './quick-search-routing.module';
 import { SearchPagesComponent } from './search-pages/search-pages.component';
 import { SearchHomeComponent } from './search-home/search-home.component';
 import { TentangAppComponent } from './tentang-app/tentang-app.component';
-
 @NgModule({
   declarations: [
     SearchPagesComponent,
